@@ -1,8 +1,9 @@
-const CACHE_NAME = 'adam-frankenstein-sheet-v1';
+const CACHE_NAME = 'adam-frankenstein-sheet-v2';
 const ASSETS = [
   './',
   './index.html',
   './Frankenstein_Zealot_Barbarian_Sheet.html',
+  './portrait.jpg',
   './manifest.json'
 ];
 
