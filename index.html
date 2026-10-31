@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#080c0a" />
   <link rel="manifest" href="./manifest.json" />
   <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230c1814'/><circle cx='50' cy='50' r='36' fill='%2322c55e' opacity='0.22'/><text y='68' x='50' text-anchor='middle' font-size='56'>⚡</text></svg>" />
-  <title>Adam ("The Creature") — Lvl 10 Zealot Barbarian Reborn</title>
+  <title>Adam ("The Creature") — Lvl 9 Zealot Barbarian Reborn</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -906,7 +906,7 @@
   <div id="portraitModal" class="portrait-modal" onclick="this.classList.remove('open')">
     <div class="portrait-modal-inner">
       <img src="./portrait.jpg" alt="Adam ('The Creature') Portrait" />
-      <div class="portrait-modal-caption">Adam ("The Creature") — Level 10 Reborn Zealot Barbarian (Tap anywhere to close)</div>
+      <div class="portrait-modal-caption">Adam ("The Creature") — Level 9 Reborn Zealot Barbarian (Tap anywhere to close)</div>
     </div>
   </div>
 
@@ -919,7 +919,7 @@
           Adam ("The Creature")
         </h1>
         <div class="char-subtitle">
-          Level 10 Barbarian (Path of the Zealot) • Reborn Construct • Mary Shelley's Titan
+          Level 9 Barbarian (Path of the Zealot) • Reborn Construct • Mary Shelley's Titan
         </div>
         <div class="char-quote">
           "I ought to be thy Adam, but I am rather the fallen angel... Beware; for I am fearless, and therefore powerful."
@@ -955,7 +955,7 @@
       <div class="rage-perks">
         <span class="rage-perk-pill">🛡️ ½ Damage from Bludgeoning, Piercing & Slashing</span>
         <span class="rage-perk-pill">💪 Advantage on All STR Checks & Saves (+3 Rage Dmg)</span>
-        <span class="rage-perk-pill">⚡ +1d6+5 Galvanic Discharge on 1st Hit/Turn</span>
+        <span class="rage-perk-pill">⚡ +1d6+4 Galvanic Discharge on 1st Hit/Turn</span>
       </div>
     </div>
 
@@ -1105,7 +1105,7 @@
             <div class="hp-header">
               <div>
                 <span style="font-family:'Cinzel',serif; font-size:0.9rem; color:var(--text-muted);">HIT POINTS:</span>
-                <span class="hp-numbers" id="hpText">105 / 105</span>
+                <span class="hp-numbers" id="hpText">95 / 95</span>
               </div>
               <div style="font-size:0.85rem; color:var(--accent-stitch); font-weight:700;">
                 Poison Resistant • No Breath/Sleep Needed
@@ -1164,11 +1164,10 @@
 
             <div class="resource-card">
               <h4>
-                <span>📢 Zealous Presence (Party Buff)</span>
+                <span>💥 Brutal Critical (Lvl 9)</span>
               </h4>
-              <button class="btn-attack" style="width:100%;" onclick="useZealousPresence()">
-                ⚡ Roar: 10 Allies Get Adv on Attacks & Saves! (1/LR)
-              </button>
+              <div style="font-size:0.85rem; color:#fde047; margin-bottom:6px;">+1 Extra Weapon Die on Melee Crits</div>
+              <div style="font-size:0.75rem; color:var(--text-muted);">Maul deals 5d6 on Crit • Fists deal 3d8 on Crit</div>
             </div>
           </div>
 
@@ -1189,7 +1188,7 @@
             </label>
             <label class="toggle-label">
               <input type="checkbox" id="divineFuryToggle" checked />
-              <span>⚡ Galvanic Discharge (+1d6+5 on 1st Hit)</span>
+              <span>⚡ Galvanic Discharge (+1d6+4 on 1st Hit)</span>
             </label>
             <label class="toggle-label">
               <input type="checkbox" id="forceCritToggle" />
@@ -1290,11 +1289,11 @@
           <div id="tab-features" class="tab-content">
             <div class="feature-item">
               <h5>Divine Fury (Galvanic Discharge)</h5>
-              <p>While raging, the first creature you hit on each of your turns takes an extra <strong>1d6 + 5 Radiant (Lightning) or Necrotic</strong> damage.</p>
+              <p>While raging, the first creature you hit on each of your turns takes an extra <strong>1d6 + 4 Radiant (Lightning) or Necrotic</strong> damage (half Barbarian level = 4).</p>
             </div>
             <div class="feature-item">
-              <h5>Zealous Presence (Bonus Action — 1/LR)</h5>
-              <p>Up to 10 allies within 60 ft gain <strong>Advantage on all attack rolls AND saving throws</strong> until the start of your next turn!</p>
+              <h5>Brutal Critical (Barbarian Level 9)</h5>
+              <p>You can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack (e.g. Maul rolls 5d6 on a crit!).</p>
             </div>
             <div class="feature-item">
               <h5>Great Weapon Master + Tavern Brawler</h5>
@@ -1310,8 +1309,8 @@
   <script>
     let state = {
       raging: false,
-      hp: 105,
-      maxHp: 105,
+      hp: 95,
+      maxHp: 95,
       rageUses: 4,
       maxRageUses: 4,
       memoryUses: 4,
@@ -1387,7 +1386,7 @@
       if (!state.raging) {
         state.raging = true;
         if (state.rageUses > 0) state.rageUses--;
-        addLog('⚡ GALVANIC RAGE IGNITED!', 'Resistance to B/P/S damage, Advantage on STR checks/saves, +3 Rage damage, and <strong>1d6+5 Galvanic Discharge</strong> active!');
+        addLog('⚡ GALVANIC RAGE IGNITED!', 'Resistance to B/P/S damage, Advantage on STR checks/saves, +3 Rage damage, and <strong>1d6+4 Galvanic Discharge</strong> active!');
       } else {
         state.raging = false;
         addLog('🔩 Galvanic Rage Subsided', 'The electrical arcs fade back beneath your sutures.');
@@ -1483,8 +1482,8 @@
       if (useFury) {
         const f1 = d(6);
         const f2 = isCrit ? d(6) : 0;
-        furySum = f1 + f2 + 5;
-        furyText = `<div style="color:var(--accent-galvanic); margin-top:3px;">⚡ <strong>Galvanic Discharge (Divine Fury):</strong> +<strong>${furySum}</strong> Radiant/Necrotic [${isCrit ? `${f1}+${f2}` : f1} + 5]</div>`;
+        furySum = f1 + f2 + 4;
+        furyText = `<div style="color:var(--accent-galvanic); margin-top:3px;">⚡ <strong>Galvanic Discharge (Divine Fury):</strong> +<strong>${furySum}</strong> Radiant/Necrotic [${isCrit ? `${f1}+${f2}` : f1} + 4]</div>`;
       }
 
       const grandTotal = maulSum + flatDmg + furySum;
@@ -1544,7 +1543,7 @@
       state.hp = state.maxHp;
       state.rageUses = state.maxRageUses;
       state.memoryUses = state.maxMemoryUses;
-      addLog('⚡ 4-Hour Motionless Reborn Rest Completed', 'HP restored to 105/105, Galvanic Rages (4/4), Donor Memories (4/4), and Zealous Presence recharged!');
+      addLog('⚡ 4-Hour Motionless Reborn Rest Completed', `HP restored to ${state.maxHp}/${state.maxHp}, Galvanic Rages (4/4), and Donor Memories (4/4) recharged!`);
       renderAll();
     }
 

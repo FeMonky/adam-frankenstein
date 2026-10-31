@@ -1,4 +1,4 @@
-const CACHE_NAME = 'adam-frankenstein-sheet-v2';
+const CACHE_NAME = 'adam-frankenstein-sheet-v3';
 const ASSETS = [
   './',
   './index.html',
